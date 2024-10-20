@@ -28,9 +28,9 @@ train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 
 # 3. モデルの定義
-class CatDogClassifier(nn.Module):
+class ImageAuthClassifier(nn.Module):
     def __init__(self):
-        super(CatDogClassifier, self).__init__()
+        super(ImageAuthClassifier, self).__init__()
         self.resnet = models.resnet18(weights=ResNet18_Weights.DEFAULT)
         num_ftrs = self.resnet.fc.in_features
         self.resnet.fc = nn.Linear(num_ftrs, 2)  # 2クラス分類に変更
@@ -38,7 +38,7 @@ class CatDogClassifier(nn.Module):
     def forward(self, x):
         return self.resnet(x)
 
-model = CatDogClassifier().to(device)
+model = ImageAuthClassifier().to(device)
 
 # 4. 損失関数と最適化の定義
 criterion = nn.CrossEntropyLoss()
