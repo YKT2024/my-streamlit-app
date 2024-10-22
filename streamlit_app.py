@@ -17,7 +17,7 @@ def get_base64_of_bin_file(bin_file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-background_image_path = "C:/Users/E.ykt/Desktop/1009_自走課題/background.png"
+background_image_path = "C:\Users\sei2e\Desktop\2024_10\background.png"
 
 if os.path.exists(background_image_path):
     print(f"背景画像が見つかりました: {background_image_path}")
