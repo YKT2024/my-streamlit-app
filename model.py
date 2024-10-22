@@ -17,7 +17,7 @@ transform = transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
-data_path = "C:/Users/E.ykt/Desktop/1009_自走課題/Tryna_use_Mickey/train"
+data_path = "C:\Users\sei2e\Desktop\2024_10\Tryna_use_Mickey\train"
 dataset = datasets.ImageFolder(data_path, transform=transform)
 
 train_size = int(0.8 * len(dataset))
